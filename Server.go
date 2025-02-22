@@ -1,3 +1,4 @@
+//UDP-Server.go
 package main
 
 import (
@@ -5,7 +6,7 @@ import (
 	"net"
 	"strings"
 )
-
+//UDP oluşturulması
 func main() {
 	addr := net.UDPAddr{
 		Port: 12345,
@@ -18,7 +19,7 @@ func main() {
 		return
 	}
 	defer conn.Close()
-
+    // verilerin buffer a yazılması
 	buffer := make([]byte, 1024)
 	for {
 		n, clientAddr, err := conn.ReadFromUDP(buffer)
